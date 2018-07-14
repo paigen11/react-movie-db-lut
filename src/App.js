@@ -3,6 +3,9 @@ import logo from './logo.svg';
 import './App.css';
 
 class App extends Component {
+    state = {
+        input: 'Hello'
+    };
 
   // part pf mew c;asses in JS
   // used when you need to manipulate props before DOM Is loaded / rendered
@@ -34,6 +37,15 @@ class App extends Component {
       console.log(this.email.value);
   };
 
+  // this is how to edit an input value - the state gets updated with each keystroke
+  // you can also do stuff like lowercase letters, trimming whitespaces, filtering over based on the input state, etc.
+  // example of a controlled input
+  updateInput = (event) => {
+      this.setState({
+          input: event.target.value.trim()
+      })
+  };
+
   render() {
     return (
       <div className="App">
@@ -44,6 +56,8 @@ class App extends Component {
         <p className="App-intro">
           To get started, edit <code>src/App.js</code> and save to reload.
         </p>
+          <h3>{this.state.input}</h3>
+          <input type='text' value={this.state.input} onChange={this.updateInput} />
           <input type='text' ref={(input) => this.text = input }/>
           <input type='email' ref={(input) => this.email = input }/>
           <button onClick={this.submit}>Show Value</button>
