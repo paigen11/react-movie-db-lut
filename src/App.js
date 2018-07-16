@@ -30,6 +30,7 @@ class App extends Component {
   //     console.log('mounted');
   // }
 
+
   // refs are taking a DOM element and assigning it a property that you can then reference
 
   submit = () => {
