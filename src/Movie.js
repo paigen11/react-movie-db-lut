@@ -1,26 +1,22 @@
-import React, { Component } from 'react';
-import PropTypes from 'prop-types';
+import React, { Component } from "react";
+import PropTypes from "prop-types";
 
-export default class Movie extends Component{
+// this is now a stateless component
+const Movie = () => (
+  <div>
+    <h3>{props.movie.title}</h3>
+  </div>
+);
 
-    // defines what props make an appearance here
-    // and throws errors if things passed in don't match or are required
-    static propTypes  = {
-        movie: PropTypes.shape({
-            title: PropTypes.string.isRequired
-        })
-    };
+// you cannot set default props on a nested property
+// static defaultProps = {
+//   desc: 'Description not available',
+// };
 
-    // you cannot set default props on a nested property
-    static defaultProps = {
-        desc: 'Description not available'
-    };
-
-    render() {
-        return (
-            <div>
-                <h3>{this.props.movie.title}</h3>
-            </div>
-        )
-    }
-}
+// defines what props make an appearance here
+// and throws errors if things passed in don't match or are required
+// static propTypes  = {
+//   movie: PropTypes.shape({
+//     title: PropTypes.string.isRequired
+//   }),
+// }
