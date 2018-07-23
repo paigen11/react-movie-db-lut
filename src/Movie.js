@@ -1,12 +1,19 @@
-import React, { Component } from "react";
-import PropTypes from "prop-types";
+import React from 'react';
+import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
 
-// this is now a stateless component
-const Movie = () => (
+const POSTER_PATH='http://image.tmdb.org/t/p/w154';
+
+// this is now a functinoal stateless component
+const Movie = ({ movie }) => (
   <div>
-    <h3>{props.movie.title}</h3>
+    <Link to={`/${movie.id}`}>
+      <img src={`${POSTER_PATH}${movie.poster_path}`} alt={movie.title} />
+    </Link>
   </div>
 );
+
+export default Movie;
 
 // you cannot set default props on a nested property
 // static defaultProps = {
@@ -15,8 +22,8 @@ const Movie = () => (
 
 // defines what props make an appearance here
 // and throws errors if things passed in don't match or are required
-// static propTypes  = {
-//   movie: PropTypes.shape({
-//     title: PropTypes.string.isRequired
-//   }),
-// }
+Movie.propTypes = {
+  movie: PropTypes.shape({
+    title: PropTypes.string.isRequired,
+  }).isRequired,
+};
