@@ -1,8 +1,8 @@
 /* eslint react/no-did-mount-set-state:0 */
 import React, { Component } from 'react';
 
-const POSTER_PATH='http://image.tmdb.org/t/p/w154';
-const BACKDROP_PATH='http://image.tmdb.org/t/p/w1280';
+const POSTER_PATH = 'http://image.tmdb.org/t/p/w154';
+const BACKDROP_PATH = 'http://image.tmdb.org/t/p/w1280';
 
 class MovieDetail extends Component {
   state = {
