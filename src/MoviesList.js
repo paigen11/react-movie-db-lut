@@ -24,9 +24,9 @@ class MoviesList extends Component {
 
   render() {
     return (
-      <div>
+      <MovieGrid>
         {this.state.movies.map(movie => <Movie key={movie.id} movie={movie} />)}
-      </div>
+      </MovieGrid>
     );
   }
 }
@@ -34,5 +34,8 @@ class MoviesList extends Component {
 export default MoviesList;
 
 const MovieGrid = styled.div`
-  background: red;
+  display: grid;
+  padding: 1rem;
+  grid-template-columns: repeat(6, 1fr);
+  grid-row-gap: 1rem;
 `;
