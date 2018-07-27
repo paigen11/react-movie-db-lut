@@ -6,7 +6,7 @@ import Overdrive from 'react-overdrive';
 
 const POSTER_PATH='http://image.tmdb.org/t/p/w154';
 
-// this is now a functinoal stateless component
+// this is now a functional stateless component
 const Movie = ({ movie }) => (
   <Link to={`/${movie.id}`}>
     <Overdrive id={movie.id}>
