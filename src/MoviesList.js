@@ -3,8 +3,8 @@ import React, { PureComponent } from 'react';
 import styled from 'styled-components';
 import Movie from './Movie';
 
-// a pure component only renders when a first level prop or state has been changed (for performance gains)
-// i.e. this component only checks first level stuff, not deep checking (like checking an array of objects, if one of those objects has changed)
+/* a pure component only renders when a first level prop or state has been changed (for performance gains)
+i.e. this component only checks first level stuff, not deep checking (like checking an array of objects, if one of those objects has changed) */
 class MoviesList extends PureComponent {
   state = {
     movies: [],

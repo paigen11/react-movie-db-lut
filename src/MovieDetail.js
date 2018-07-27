@@ -29,6 +29,23 @@ class MovieDetail extends Component {
 
   render() {
     const { movie } = this.state;
+
+    // example of one way to do an inline conditional
+    // line 56 is the other way - inline with the rest of the JSX
+    let detail = (
+      <h1>
+        Hi
+      </h1>
+    );
+
+    if (this.state.movie.title) {
+      detail = (
+        <h1>
+          Hello
+        </h1>
+      );
+    }
+
     return (
       <MovieWrapper backdrop={`${BACKDROP_PATH}${movie.backdrop_path}`}>
         <MovieInfo>
@@ -36,6 +53,10 @@ class MovieDetail extends Component {
             <Poster src={`${POSTER_PATH}${movie.poster_path}`} alt={movie.title} />
           </Overdrive>
           <div>
+            {this.state.movie.title ? (
+              <h1>Hello</h1>
+              );
+            }
             <h1>{movie.title}</h1>
             <h3>{movie.release_date}</h3>
             <p>{movie.overview}</p>
