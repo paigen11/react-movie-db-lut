@@ -1,26 +1,28 @@
 /* eslint react/no-did-mount-set-state:0 */
-import React, { Component } from 'react';
-import styled from 'styled-components';
-import Overdrive from 'react-overdrive';
-import { Poster } from './Movie';
+import React, { Component } from "react";
+import styled from "styled-components";
+import Overdrive from "react-overdrive";
+import { Poster } from "./Movie";
 
-const POSTER_PATH = 'http://image.tmdb.org/t/p/w154';
-const BACKDROP_PATH = 'http://image.tmdb.org/t/p/w1280';
+const POSTER_PATH = "http://image.tmdb.org/t/p/w154";
+const BACKDROP_PATH = "http://image.tmdb.org/t/p/w1280";
 
 class MovieDetail extends Component {
   state = {
-    movie: {},
+    movie: {}
   };
 
   async componentDidMount() {
     try {
       // make an api call with the movie id
       const res = await fetch(
-        `https://api.themoviedb.org/3/movie/${this.props.match.params.id}?api_key=fec8b5ab27b292a68294261bb21b04a5&language=en-US`,
+        `https://api.themoviedb.org/3/movie/${
+          this.props.match.params.id
+        }?api_key=fec8b5ab27b292a68294261bb21b04a5&language=en-US`
       );
       const movie = await res.json();
       this.setState({
-        movie,
+        movie
       });
     } catch (e) {
       console.log(e);
@@ -32,36 +34,31 @@ class MovieDetail extends Component {
 
     // example of one way to do an inline conditional
     // line 56 is the other way - inline with the rest of the JSX
-    let detail = (
-      <h1>
-        Hi
-      </h1>
-    );
+    // let detail = (
+    //   <h1>
+    //     Hi
+    //   </h1>
+    // );
 
-    if (this.state.movie.title) {
-      detail = (
-        <h1>
-          Hello
-        </h1>
-      );
-    }
+    // if (this.state.movie.title) {
+    //   detail = (
+    //     <h1>
+    //       Hello
+    //     </h1>
+    //   );
+    // }
 
     return (
       <MovieWrapper backdrop={`${BACKDROP_PATH}${movie.backdrop_path}`}>
         <MovieInfo>
           <Overdrive id={movie.id}>
-            <Poster src={`${POSTER_PATH}${movie.poster_path}`} alt={movie.title} />
+            <Poster
+              src={`${POSTER_PATH}${movie.poster_path}`}
+              alt={movie.title}
+            />
           </Overdrive>
           <div>
-            {this.state.movie.title ? (
-              <h1>
-                Hello
-              </h1>
-            ) : (
-              <h1>
-                Hi
-              </h1>
-            )}
+            {this.state.movie.title ? <h1>Hello</h1> : <h1>Hi</h1>}
             <h1>{movie.title}</h1>
             <h3>{movie.release_date}</h3>
             <p>{movie.overview}</p>

@@ -1,0 +1,7 @@
+{
+    "editor.fontLigatures": true,
+    "terminal.integrated.fontFamily": "Fira Code",
+    "[javascript]": {
+        "editor.formatOnSave": true
+    }
+}

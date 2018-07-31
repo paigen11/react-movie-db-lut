@@ -1,12 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="ba98e244-0838-4a5c-bbbb-ebced0bab10d" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.eslintrc.js" beforeDir="false" afterPath="$PROJECT_DIR$/.eslintrc" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/jsLinters/eslint.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/jsLinters/eslint.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="ba98e244-0838-4a5c-bbbb-ebced0bab10d" name="Default" comment="" />
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
     <ignored path="$PROJECT_DIR$/tmp/" />
@@ -31,10 +26,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="MovieDetail.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="MovieDetail.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/MovieDetail.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="48">
+            <state relative-caret-position="377">
               <caret line="42" column="12" lean-forward="true" selection-start-line="42" selection-start-column="12" selection-end-line="42" selection-end-column="12" />
               <folding>
                 <element signature="n#!!doc" expanded="true" />
@@ -44,7 +39,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name=".eslintrc" pinned="false" current-in-tab="true">
+      <file leaf-file-name=".eslintrc" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/.eslintrc">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="400">
@@ -230,26 +225,25 @@
       <workItem from="1532026054743" duration="1256000" />
       <workItem from="1532109669818" duration="14799000" />
       <workItem from="1532978792406" duration="611000" />
-      <workItem from="1533058238227" duration="1205000" />
+      <workItem from="1533058238227" duration="1713000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="30774000" />
+    <option name="totallyTimeSpent" value="31282000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="792" y="23" width="888" height="947" extended-state="0" />
-    <editor active="true" />
     <layout>
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info id="DB Browser" order="2" />
       <window_info anchor="bottom" id="DB Execution Console" order="7" />
       <window_info anchor="bottom" id="Event Log" order="7" sideWeight="0.5006794" side_tool="true" weight="0.32889965" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.32889965" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.32889965" />
       <window_info anchor="bottom" id="Version Control" order="7" />
       <window_info id="npm" order="2" side_tool="true" />
       <window_info anchor="right" id="Mongo Explorer" order="3" />
-      <window_info anchor="bottom" id="Terminal" order="7" sideWeight="0.49932066" weight="0.32889965" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="7" sideWeight="0.49932066" visible="true" weight="0.32889965" />
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.23522459" />
       <window_info anchor="bottom" id="Docker" order="7" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -487,21 +481,21 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/.eslintrc">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="400">
+          <caret line="25" column="31" lean-forward="true" selection-start-line="25" selection-start-column="31" selection-end-line="25" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/MovieDetail.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="48">
+        <state relative-caret-position="377">
           <caret line="42" column="12" lean-forward="true" selection-start-line="42" selection-start-column="12" selection-end-line="42" selection-end-column="12" />
           <folding>
             <element signature="n#!!doc" expanded="true" />
             <element signature="e#44#85#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.eslintrc">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="400">
-          <caret line="25" column="31" lean-forward="true" selection-start-line="25" selection-start-column="31" selection-end-line="25" selection-end-column="31" />
         </state>
       </provider>
     </entry>

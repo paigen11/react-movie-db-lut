@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 import Overdrive from 'react-overdrive';
 
-const POSTER_PATH='http://image.tmdb.org/t/p/w154';
+const POSTER_PATH = 'http://image.tmdb.org/t/p/w154';
 
 // this is now a functional stateless component
 const Movie = ({ movie }) => (
@@ -27,6 +27,7 @@ export default Movie;
 Movie.propTypes = {
   movie: PropTypes.shape({
     title: PropTypes.string.isRequired,
+    id: PropTypes.number.isRequired,
   }).isRequired,
 };
 
