@@ -2,12 +2,20 @@ import React from 'react';
 // how you grab data using redux instead of passing it through props
 import { connect } from 'react-redux';
 
-const Toggle = ({ messageVisibility }) => (
+const Toggle = ({ messageVisibility, dispatch }) => (
   <div>
     {messageVisibility && (
       <p>You will be seeing this if redux action is toggled</p>
     )}
-    <button>Toggle Me</button>
+    <button
+      onClick={() =>
+        dispatch({
+          type: 'TOGGLE_MESSAGE',
+        })
+      }
+    >
+      Toggle Me
+    </button>
   </div>
 );
 
