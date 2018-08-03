@@ -26,5 +26,6 @@
     "function-paren-newline": 0,
     "react/jsx-one-expression-per-line": "off",
     "space-before-function-paren": "off",
+    "implicit-arrow-linebreak": "off"
   }
 }
