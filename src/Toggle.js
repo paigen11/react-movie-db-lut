@@ -1,13 +1,17 @@
 import React from 'react';
 // how you grab data using redux instead of passing it through props
 import { connect } from 'react-redux';
+/* by placing the toggle message action in another file, it can be removed
+from the dispatch function here (that's an 'action creator') and it can
+ then be reused and dropped anywhere in your project */
+import { toggleMessage } from './actions';
 
 const Toggle = ({ messageVisibility, dispatch }) => (
   <div>
     {messageVisibility && (
       <p>You will be seeing this if redux action is toggled</p>
     )}
-    <button type="button" onClick={() => dispatch({ type: 'TOGGLE_MESSAGE' })}>
+    <button type="button" onClick={() => dispatch(toggleMessage())}>
       Toggle Me
     </button>
   </div>
