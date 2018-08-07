@@ -3,8 +3,10 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Switch, Link } from 'react-router-dom';
 import { Provider } from 'react-redux';
-import { createStore } from 'redux';
+import { applyMiddleware, createStore } from 'redux';
 import { composeWithDevTools } from 'redux-devtools-extension';
+import logger from 'redux-logger';
+import thunk from 'redux-thunk';
 import logo from './logo.svg';
 import './App.css';
 
@@ -14,12 +16,14 @@ import MoviesList from './MoviesList';
 import MovieDetail from './MovieDetail';
 import Toggle from './Toggle';
 
+const middleware = [logger, thunk];
+
 const store = createStore(
   rootReducer,
   // requires initial state of store
   {},
   // third arg is the middleware we're using (what sits between redux and developer)
-  composeWithDevTools(),
+  composeWithDevTools(applyMiddleware(...middleware)),
 );
 
 // converted to functional stateless component
