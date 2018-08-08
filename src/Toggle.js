@@ -5,15 +5,18 @@ import { bindActionCreators } from 'redux';
 /* by placing the toggle message action in another file, it can be removed
 from the dispatch function here (that's an 'action creator') and it can
  then be reused and dropped anywhere in your project */
-import { toggleMessage } from './actions';
+import { toggleMessage, getMovies } from './actions';
 
-const Toggle = ({ messageVisibility, toggleMessage }) => (
+const Toggle = ({ messageVisibility, toggleMessage, getMovies }) => (
   <div>
     {messageVisibility && (
       <p>You will be seeing this if redux action is toggled</p>
     )}
     <button type="button" onClick={toggleMessage}>
       Toggle Me
+    </button>
+    <button type="button" onClick={getMovies}>
+      Load Movies
     </button>
   </div>
 );
@@ -30,6 +33,7 @@ const mapDispatchToProps = dispatch =>
   bindActionCreators(
     {
       toggleMessage,
+      getMovies,
     },
     dispatch,
   );

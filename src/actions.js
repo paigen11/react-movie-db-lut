@@ -8,6 +8,8 @@ export function toggleMessage() {
   };
 }
 
+// this is a thunk - a reducer function that returns another action
+// it dispatches the data once it gets it
 export function getMovies() {
   return async function(dispatch) {
     const res = await fetch(
