@@ -8,7 +8,7 @@ from the dispatch function here (that's an 'action creator') and it can
 import { toggleMessage } from './actions';
 import { getMovies } from '../movies/actions';
 
-const Toggle = ({ messageVisibility, toggleMessage, getMovies }) => (
+const Toggle = ({ messageVisibility, toggleMessage }) => (
   <div>
     {messageVisibility && (
       <p>You will be seeing this if redux action is toggled</p>
@@ -34,7 +34,6 @@ const mapDispatchToProps = dispatch =>
   bindActionCreators(
     {
       toggleMessage,
-      getMovies,
     },
     dispatch,
   );
