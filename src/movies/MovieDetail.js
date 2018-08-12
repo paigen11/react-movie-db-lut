@@ -1,15 +1,15 @@
 /* eslint react/no-did-mount-set-state:0 */
-import React, { Component } from "react";
-import styled from "styled-components";
-import Overdrive from "react-overdrive";
-import { Poster } from "./Movie";
+import React, { Component } from 'react';
+import styled from 'styled-components';
+import Overdrive from 'react-overdrive';
+import { Poster } from './Movie';
 
-const POSTER_PATH = "http://image.tmdb.org/t/p/w154";
-const BACKDROP_PATH = "http://image.tmdb.org/t/p/w1280";
+const POSTER_PATH = 'http://image.tmdb.org/t/p/w154';
+const BACKDROP_PATH = 'http://image.tmdb.org/t/p/w1280';
 
 class MovieDetail extends Component {
   state = {
-    movie: {}
+    movie: {},
   };
 
   async componentDidMount() {
@@ -18,11 +18,11 @@ class MovieDetail extends Component {
       const res = await fetch(
         `https://api.themoviedb.org/3/movie/${
           this.props.match.params.id
-        }?api_key=fec8b5ab27b292a68294261bb21b04a5&language=en-US`
+        }?api_key=fec8b5ab27b292a68294261bb21b04a5&language=en-US`,
       );
       const movie = await res.json();
       this.setState({
-        movie
+        movie,
       });
     } catch (e) {
       console.log(e);

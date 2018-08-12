@@ -12,9 +12,9 @@ import './App.css';
 
 import rootReducer from './rootReducer';
 
-import MoviesList from './MoviesList';
-import MovieDetail from './MovieDetail';
-import Toggle from './Toggle';
+import MoviesList from './movies/MoviesList';
+import MovieDetail from './movies/MovieDetail';
+import Toggle from './toggle/Toggle';
 
 const middleware = [logger, thunk];
 

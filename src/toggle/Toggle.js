@@ -5,7 +5,8 @@ import { bindActionCreators } from 'redux';
 /* by placing the toggle message action in another file, it can be removed
 from the dispatch function here (that's an 'action creator') and it can
  then be reused and dropped anywhere in your project */
-import { toggleMessage, getMovies } from './actions';
+import { toggleMessage } from './actions';
+import { getMovies } from '../movies/actions';
 
 const Toggle = ({ messageVisibility, toggleMessage, getMovies }) => (
   <div>
@@ -23,7 +24,7 @@ const Toggle = ({ messageVisibility, toggleMessage, getMovies }) => (
 
 // allows us to pick which aspects of the redux store will be passed to that component
 const mapStateToProps = state => ({
-  messageVisibility: state.message.messageVisibility,
+  messageVisibility: state.toggle.messageVisibility,
 });
 
 /* now instead of having to import dispatch,
