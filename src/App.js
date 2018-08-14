@@ -5,6 +5,7 @@ import { BrowserRouter as Router, Route, Switch, Link } from 'react-router-dom';
 import { Provider } from 'react-redux';
 import { applyMiddleware, createStore } from 'redux';
 import { composeWithDevTools } from 'redux-devtools-extension';
+import { save, load } from 'redux-localstorage-simple';
 import logger from 'redux-logger';
 import thunk from 'redux-thunk';
 import logo from './logo.svg';
@@ -21,9 +22,10 @@ const middleware = [logger, thunk];
 const store = createStore(
   rootReducer,
   // requires initial state of store
-  {},
+  // load looks into localstorage, sees if it exists and sets that state if it does
+  load(),
   // third arg is the middleware we're using (what sits between redux and developer)
-  composeWithDevTools(applyMiddleware(...middleware)),
+  composeWithDevTools(applyMiddleware(...middleware, save())),
 );
 
 // converted to functional stateless component
