@@ -6,14 +6,17 @@ import styled from 'styled-components';
 import Movie from './Movie';
 import { getMovies } from './actions';
 
-/* a pure component only renders when a first level prop or state has been changed (for performance gains)
-i.e. this component only checks first level stuff, not deep checking (like checking an array of objects, if one of those objects has changed) */
+/* a pure component only renders when a first level prop or state has been changed
+(for performance gains)i.e. this component only checks first level stuff, not deep checking
+(like checking an array of objects, if one of those objects has changed) */
 class MoviesList extends PureComponent {
   componentDidMount() {
     // fires dispatch then getMovies from our action
-    const { getMovies } = this.props;
-    getMovies();
-    // this.props.getMovies();
+    const { getMovies, isLoaded } = this.props;
+    if (!isLoaded) {
+      getMovies();
+      // this.props.getMovies();
+    }
   }
 
   render() {
@@ -28,6 +31,7 @@ class MoviesList extends PureComponent {
 
 const mapStateToProps = state => ({
   movies: state.movies.movies,
+  isLoaded: state.movies.moviesLoaded,
 });
 
 const mapDispatchToProps = dispatch =>

@@ -2,35 +2,27 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
 import Overdrive from 'react-overdrive';
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
 import { Poster } from './Movie';
+import { getMovie, resetMovie } from './actions';
 
 const POSTER_PATH = 'http://image.tmdb.org/t/p/w154';
 const BACKDROP_PATH = 'http://image.tmdb.org/t/p/w1280';
 
 class MovieDetail extends Component {
-  state = {
-    movie: {},
-  };
+  componentDidMount() {
+    const { getMovie, match } = this.props;
+    getMovie(match.params.id);
+  }
 
-  async componentDidMount() {
-    try {
-      // make an api call with the movie id
-      const res = await fetch(
-        `https://api.themoviedb.org/3/movie/${
-          this.props.match.params.id
-        }?api_key=fec8b5ab27b292a68294261bb21b04a5&language=en-US`,
-      );
-      const movie = await res.json();
-      this.setState({
-        movie,
-      });
-    } catch (e) {
-      console.log(e);
-    }
+  componentWillUnmount() {
+    this.props.resetMovie();
   }
 
   render() {
-    const { movie } = this.state;
+    const { movie } = this.props;
+    if (!movie.id) return null;
 
     // example of one way to do an inline conditional
     // line 56 is the other way - inline with the rest of the JSX
@@ -58,7 +50,7 @@ class MovieDetail extends Component {
             />
           </Overdrive>
           <div>
-            {this.state.movie.title ? <h1>Hello</h1> : <h1>Hi</h1>}
+            {/* {movie.title ? <h1>Hello</h1> : <h1>Hi</h1>} */}
             <h1>{movie.title}</h1>
             <h3>{movie.release_date}</h3>
             <p>{movie.overview}</p>
@@ -69,7 +61,24 @@ class MovieDetail extends Component {
   }
 }
 
-export default MovieDetail;
+const mapStateToProps = state => ({
+  movie: state.movies.movie,
+  isLoaded: state.movies.movieLoaded,
+});
+
+const mapDispatchToProps = dispatch =>
+  bindActionCreators(
+    {
+      getMovie,
+      resetMovie,
+    },
+    dispatch,
+  );
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps,
+)(MovieDetail);
 
 const MovieWrapper = styled.div`
   position: relative;

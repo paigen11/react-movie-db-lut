@@ -1,7 +1,11 @@
-import { GET_MOVIES } from './actions';
+import { GET_MOVIES, GET_MOVIE, RESET_MOVIE } from './actions';
 
+// only represents initial state for this particular reducer
 const initialState = {
   movies: [],
+  moviesLoaded: false,
+  movie: {},
+  movieLoaded: false,
 };
 
 // nice for unnamed default exports for functions - can't be done with arrow functions
@@ -14,6 +18,19 @@ export default function(state = initialState, action) {
       return {
         ...state,
         movies: data,
+        moviesLoaded: true,
+      };
+    case GET_MOVIE:
+      return {
+        ...state,
+        movie: data,
+        movieLoaded: true,
+      };
+    case RESET_MOVIE:
+      return {
+        ...state,
+        movie: {},
+        movieLoaded: false,
       };
     default:
       return state;
