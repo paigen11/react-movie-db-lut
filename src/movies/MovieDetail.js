@@ -1,5 +1,6 @@
 /* eslint react/no-did-mount-set-state:0 */
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import Overdrive from 'react-overdrive';
 import { connect } from 'react-redux';
@@ -17,7 +18,8 @@ class MovieDetail extends Component {
   }
 
   componentWillUnmount() {
-    this.props.resetMovie();
+    const { resetMovie } = this.props;
+    resetMovie();
   }
 
   render() {
@@ -79,6 +81,16 @@ export default connect(
   mapStateToProps,
   mapDispatchToProps,
 )(MovieDetail);
+
+MovieDetail.propTypes = {
+  movie: PropTypes.shape({
+    title: PropTypes.string.isRequired,
+    id: PropTypes.string.isRequired,
+  }).isRequired,
+  getMovie: PropTypes.func.isRequired,
+  resetMovie: PropTypes.func.isRequired,
+  match: PropTypes.number.isRequired,
+};
 
 const MovieWrapper = styled.div`
   position: relative;
