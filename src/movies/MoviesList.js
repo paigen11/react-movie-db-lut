@@ -2,6 +2,7 @@
 import React, { PureComponent } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
+import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import Movie from './Movie';
 import { getMovies } from './actions';
@@ -50,6 +51,13 @@ export default connect(
   mapStateToProps,
   mapDispatchToProps,
 )(MoviesList);
+
+MoviesList.propTypes = {
+  movies: PropTypes.arrayOf(PropTypes.shape).isRequired,
+  isLoaded: PropTypes.bool.isRequired,
+  moviesLoadedAt: PropTypes.instanceOf(Date).isRequired,
+  getMovies: PropTypes.func.isRequired,
+};
 
 const MovieGrid = styled.div`
   display: grid;
