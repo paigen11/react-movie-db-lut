@@ -12,8 +12,11 @@ import { getMovies } from './actions';
 class MoviesList extends PureComponent {
   componentDidMount() {
     // fires dispatch then getMovies from our action
-    const { getMovies, isLoaded } = this.props;
-    if (!isLoaded) {
+    const { getMovies, isLoaded, moviesLoadedAt } = this.props;
+    const oneHour = 60 * 60 * 1000;
+    console.log(new Date() - new Date(moviesLoadedAt));
+    // check if movies are loaded and if so, check if they're over 1 hour old and fetch if they are
+    if (!isLoaded || new Date() - new Date(moviesLoadedAt) > oneHour) {
       getMovies();
       // this.props.getMovies();
     }
@@ -32,6 +35,7 @@ class MoviesList extends PureComponent {
 const mapStateToProps = state => ({
   movies: state.movies.movies,
   isLoaded: state.movies.moviesLoaded,
+  moviesLoadedAt: state.movies.moviesLoadedAt,
 });
 
 const mapDispatchToProps = dispatch =>
