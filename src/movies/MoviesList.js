@@ -55,7 +55,7 @@ export default connect(
 MoviesList.propTypes = {
   movies: PropTypes.arrayOf(PropTypes.shape).isRequired,
   isLoaded: PropTypes.bool.isRequired,
-  moviesLoadedAt: PropTypes.instanceOf(Date).isRequired,
+  moviesLoadedAt: PropTypes.string.isRequired,
   getMovies: PropTypes.func.isRequired,
 };
 
